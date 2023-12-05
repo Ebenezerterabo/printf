@@ -28,6 +28,9 @@ int print_str(va_list ap)
 
 	if (str == NULL)
 		str = "(nil)";
+
+	if (*str == '\0')
+		return (0);
 	write(1, str, _strlen(str));
 	return (_strlen(str));
 }
