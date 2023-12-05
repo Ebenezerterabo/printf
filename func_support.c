@@ -33,6 +33,11 @@ int print_str(va_list ap)
 
 	return (_strlen(str));
 }
+/**
+ * _strlen - calculate the lenght of the *str
+ * @*str - string char
+ * return - 1 on success
+ */
 
 int _strlen(char *str)
 {
@@ -56,7 +61,7 @@ int _strlen(char *str)
 
 int _putchr(char c)
 {
-	return(write(1, &c, 1));
+	return (write(1, &c, 1));
 }
 
 /**
@@ -74,7 +79,7 @@ int put_int(int num)
 	{
 		_putchr('-');
 		count++;
-		num = - num;
+		num = -num;
 	}
 
 	while (temp / 10 != 0)
