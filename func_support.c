@@ -61,7 +61,8 @@ int _strlen(char *str)
 
 int _putchr(char c)
 {
-	return (write(1, &c, 1));
+	write(1, &c, 1);
+	return (1);
 }
 
 /**
