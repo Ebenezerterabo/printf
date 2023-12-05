@@ -24,14 +24,12 @@ int print_char(va_list ap)
 
 int print_str(va_list ap)
 {
-    char *str = va_arg(ap, char*);
+	char *str = va_arg(ap, char*);
 
-    if (str == NULL)
-        str = "(nil)";
-
-    write(1, str, _strlen(str));
-
-    return (_strlen(str));
+	if (str == NULL)
+		str = "(nil)";
+	write(1, str, _strlen(str));
+	return (_strlen(str));
 }
 
 /**
