@@ -34,9 +34,9 @@ int print_str(va_list ap)
 	return (_strlen(str));
 }
 /**
- * _strlen - calculate the lenght of the *str
- * @*str - string char
- * return - 1 on success
+ * _strlen - calculate the lenght of the string
+ * @str: string char
+ * Return: - 1 on success
  */
 
 int _strlen(char *str)
