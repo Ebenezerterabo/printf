@@ -25,6 +25,8 @@ int print_char(va_list ap)
 int print_str(va_list ap)
 {
 	char *str = va_arg(ap, char*);
+	if (str == NULL)
+		str = "(nil)";
 
 	if (*str != '\0')
 		write(1, str, _strlen(str));
