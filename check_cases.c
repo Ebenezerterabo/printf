@@ -12,15 +12,6 @@ int check_cases(va_list ap, const char *format)
 {
 	int len = 0;
 
-	if (*format == 's')
-	{
-		char *str = va_arg(ap, char *);
-
-		if (str == NULL)
-			str = "(nil)";
-		len += print_str(ap);
-	}
-
 	if (*format == 'd' || *format == 'i')
 	{
 		len += put_int(va_arg(ap, int));
