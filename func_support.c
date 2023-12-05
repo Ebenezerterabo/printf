@@ -24,17 +24,16 @@ int print_char(va_list ap)
 
 int print_str(va_list ap)
 {
-	char *str = va_arg(ap, char*);
-	if (str == NULL)
-		str = "(nil)";
+    char *str = va_arg(ap, char*);
 
-	if (*str != '\0')
-		write(1, str, _strlen(str));
-	else
-		write(1, "(nil)", 5);
+    if (str == NULL)
+        str = "(nil)";
 
-	return (_strlen(str));
+    write(1, str, _strlen(str));
+
+    return (_strlen(str));
 }
+
 /**
  * _strlen - calculate the lenght of the string
  * @str: string char

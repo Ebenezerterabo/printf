@@ -9,13 +9,13 @@
 
 int _printf(const char *format, ...)
 {
+	int total_char = 0;
+	va_list ap;
+
 	if (format == NULL || *format == '\0')
 	{
 		return (-1);
 	}
-	int total_char = 0;
-	va_list ap;
-
 	va_start(ap, format);
 
 	while (*format)
