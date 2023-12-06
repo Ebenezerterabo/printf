@@ -12,10 +12,10 @@ int _printf(const char *format, ...)
 	int total_char = 0;
 	va_list ap;
 
-	if (format == NULL)
-		return (-1);
-
 	va_start(ap, format);
+
+	if (format == NULL || *format == ' ')
+		return (-1);
 
 	while (*format)
 	{
