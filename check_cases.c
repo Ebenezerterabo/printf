@@ -15,7 +15,6 @@ int check_cases(va_list ap, const char *format)
 	if (*format == 'd' || *format == 'i')
 	{
 		len += put_int(va_arg(ap, int));
-		return (len);
 	}
 	else
 	{
