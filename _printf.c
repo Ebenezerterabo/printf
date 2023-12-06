@@ -12,17 +12,22 @@ int _printf(const char *format, ...)
 	int total_char = 0;
 	va_list ap;
 
-	if (format == NULL || *format == '\0')
-	{
-		return (-1);
-	}
 	va_start(ap, format);
+
+	if (format == NULL)
+		return (-1);
 
 	while (*format)
 	{
 		if (*format == '%')
 		{
+			while (*(format + 1) == ' ')
+				format++;
+
 			format++;
+
+			if (*format == '\0' || *format == ' ')
+				return (-1);
 
 			total_char += check_cases(ap, format);
 		}
