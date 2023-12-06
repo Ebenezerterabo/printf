@@ -30,8 +30,8 @@ int print_str(va_list ap)
 
 	if (!str)
 	{
-		write(1, "(nil)", 5);
-		return (5);
+		write(1, "(null)", 6);
+		return (6);
 	}
 
 	len = _strlen(str);
