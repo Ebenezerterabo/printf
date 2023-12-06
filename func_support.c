@@ -42,7 +42,7 @@ int print_str(va_list ap)
 			i++;
 		}
 
-	return (i);
+	return (len);
 }
 
 /**
