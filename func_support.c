@@ -30,16 +30,14 @@ int print_str(va_list ap)
 
 	if (!str)
 		return (0);
-	else
-	{
-		len = _strlen(str);
+
+	len = _strlen(str);
 
 		while (i != len)
 		{
 			_putchr(str[i]);
 			i++;
 		}
-	}
 
 	return (i);
 }
