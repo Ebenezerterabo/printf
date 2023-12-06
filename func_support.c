@@ -26,13 +26,22 @@ int print_str(va_list ap)
 {
 	char *str = va_arg(ap, char*);
 
-	if (str == NULL)
-		str = "(nil)";
+	int len, i = 0;
 
-	if (*str == '\0')
+	if (!str)
 		return (0);
-	write(1, str, _strlen(str));
-	return (_strlen(str));
+	else
+	{
+		len = _strlen(str);
+
+		while (i != len)
+		{
+			_putchr(str[i]);
+			i++;
+		}
+	}
+
+	return (i);
 }
 
 /**
