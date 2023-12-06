@@ -29,7 +29,10 @@ int print_str(va_list ap)
 	int len, i = 0;
 
 	if (!str)
-		return (0);
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 
 	len = _strlen(str);
 
