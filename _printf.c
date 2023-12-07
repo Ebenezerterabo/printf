@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 
 			format++;
 
-			if (*format == '\0' || *format == ' ')
+			if (*format == '\0')
 				return (-1);
 
 			total_char += check_cases(ap, format);
