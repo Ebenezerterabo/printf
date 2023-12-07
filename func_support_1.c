@@ -29,24 +29,27 @@ int put_int(va_list ap)
 		count++;
 		num = -(num);
 	}
+
+	if (num == 0)
+	{
+		putchr('0');
+		count++;
+	}
 	else
 	{
 		while (num > 0)
 		{
-			temp = num % 10;
-			rev_num = rev_num * 10 + temp;
+			rev_num = rev_num * 10 + num % 10;
 			num /= 10;
 		}
 
 		while (rev_num > 0)
 		{
-			temp = rev_num % 10;
-			_putchr(temp + '0');
+			_putchr(rev_num % 10 + '0');
 			count++;
 			rev_num /= 10;
 		}
 	}
 
 	return (count);
-
 }
