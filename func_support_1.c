@@ -9,19 +9,8 @@
 
 int put_int(va_list ap)
 {
-	long rev_num = 0, temp;
-	int count = 0, num;
-
-	num = va_arg(ap, int);
-
-	if (num == INT_MIN)
-	{
-		_putchr('-');
-		count++;
-		rev_num = -(num % 10);
-		num /= 10;
-		num = -num;
-	}
+	long num = (long)va_arg(ap, int);
+	long count = 0, rev_num = 0;
 
 	if (num < 0)
 	{
@@ -32,7 +21,7 @@ int put_int(va_list ap)
 
 	if (num == 0)
 	{
-		putchr('0');
+		_putchr('0');
 		count++;
 	}
 	else
