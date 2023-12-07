@@ -9,8 +9,8 @@
 
 int put_int(va_list ap)
 {
-	int rev_num, temp, count = 0;
-	int num;
+	long rev_num = 0, temp;
+	int count = 0, num;
 
 	num = va_arg(ap, int);
 
@@ -18,8 +18,14 @@ int put_int(va_list ap)
 	{
 		_putchr('-');
 		count++;
-		num = -num;
+
+		if (num == INT_MIN)
+
+			num = -(num / 10);
+		else
+			num = -num;
 	}
+
 
 	if (num == 0)
 	{
@@ -28,14 +34,14 @@ int put_int(va_list ap)
 	}
 	else
 	{
-		while (num != 0)
+		while (num > 0)
 		{
 			temp = num % 10;
 			rev_num = rev_num * 10 + temp;
 			num /= 10;
 		}
 
-		while (rev_num != 0)
+		while (rev_num > 0)
 		{
 			temp = rev_num % 10;
 			_putchr(temp + '0');
