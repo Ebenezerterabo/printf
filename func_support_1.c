@@ -29,12 +29,6 @@ int put_int(va_list ap)
 		count++;
 		num = -(num);
 	}
-
-	if (num == 0)
-	{
-		_putchr('0');
-		count++;
-	}
 	else
 	{
 		while (num > 0)
