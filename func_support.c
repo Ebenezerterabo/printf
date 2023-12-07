@@ -51,7 +51,7 @@ int print_str(va_list ap)
  * Return: - 1 on success
  */
 
-int _strlen(char *str)
+int _strlen(const char *str)
 {
 	int len = 0;
 
