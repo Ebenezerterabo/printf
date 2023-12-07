@@ -31,10 +31,7 @@ int check_cases(va_list ap, const char *format)
 			len += _putchr('%');
 			break;
 		default:
-		{
-			write(1, format, 1);
-			len++;
-		}
+			break;
 
 		}
 	}
