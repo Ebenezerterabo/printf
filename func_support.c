@@ -77,33 +77,3 @@ int _putchr(char c)
 	return (1);
 }
 
-/**
- * put_int - A function that prints an integer
- * @num: the number
- *
- * Return: an integer
- */
-
-int put_int(int num)
-{
-	int count = 0, temp = num;
-
-	if (num < 0)
-	{
-		_putchr('-');
-		count++;
-		num = -num;
-	}
-
-	while (temp / 10 != 0)
-	{
-		temp /= 10;
-		count++;
-	}
-
-	if (num / 10 != 0)
-		put_int(num / 10);
-	_putchr(num % 10 + '0');
-
-	return (count);
-}
