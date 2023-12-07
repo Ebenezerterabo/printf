@@ -14,18 +14,21 @@ int put_int(va_list ap)
 
 	num = va_arg(ap, int);
 
+	if (num == INT_MIN)
+	{
+		_putchr('-');
+		count++;
+		rev_num = -(num % 10);
+		num /= 10;
+		num = -num;
+	}
+
 	if (num < 0)
 	{
 		_putchr('-');
 		count++;
-
-		if (num == INT_MIN)
-
-			num = -(num / 10);
-		else
-			num = -num;
+		num = -(num);
 	}
-
 
 	if (num == 0)
 	{
