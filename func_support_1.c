@@ -58,13 +58,13 @@ int print_binary(va_list ap)
 	int *num_bits = malloc(sizeof(int) * 8 * sizeof(unsigned long int));
 
 	if (num_bits == NULL)
-		return;
+		return (-1);
 
 	if (num == 0)
 	{
 		_putchr('0');
 		free(num_bits);
-		return;
+		return (0);
 	}
 
 	for (idx = 0; num > 0; num /= 2)
