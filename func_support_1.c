@@ -45,18 +45,25 @@ int put_int(va_list ap)
 
 /**
  * print_binary - A function to print binary representation of an integer
- * @num: the number
+ * @ap: argument pointer
  *
  * Return: binary number
  */
 
 void print_binary(va_list ap)
 {
-	int idx, i, num_bits[32];
-	int num = va_arg(ap, int);
+	int idx, i;
+	unsigned int num = va_arg(ap, unsigned long);
+
+	int *num_bits = malloc(sizeof(int) * 8 * sizeof(unsigned long int));
+
+	if (num_bits == NULL)
+		return;
+
 	if (num == 0)
 	{
 		_putchr('0');
+		free(num_bits);
 		return;
 	}
 
@@ -68,4 +75,6 @@ void print_binary(va_list ap)
 
 	for (i = idx - 1; i >= 0; i--)
 		_putchr(num_bits[i] + '0');
+
+	free(num_bits);
 }
