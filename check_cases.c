@@ -31,7 +31,7 @@ int check_cases(va_list ap, const char *format)
 			len += _putchr('%');
 			break;
 		case 'b':
-			print_binary(ap);
+			len += print_binary(ap);
 		default:
 			break;
 
