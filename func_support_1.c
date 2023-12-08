@@ -50,9 +50,9 @@ int put_int(va_list ap)
  * Return: binary number
  */
 
-void print_binary(va_list ap)
+int print_binary(va_list ap)
 {
-	int idx, i;
+	int idx, i, count = 0;
 	unsigned int num = va_arg(ap, unsigned long);
 
 	int *num_bits = malloc(sizeof(int) * 8 * sizeof(unsigned long int));
@@ -74,7 +74,12 @@ void print_binary(va_list ap)
 	}
 
 	for (i = idx - 1; i >= 0; i--)
+	{
 		_putchr(num_bits[i] + '0');
+		count++;
+	}
 
 	free(num_bits);
+
+	return (count);
 }
