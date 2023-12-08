@@ -32,6 +32,10 @@ int check_cases(va_list ap, const char *format)
 			break;
 		case 'b':
 			len += print_binary(ap);
+			break;
+		case 'r':
+			len += string_rev(ap);
+			break;
 		default:
 			break;
 
