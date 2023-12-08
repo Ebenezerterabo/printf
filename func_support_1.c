@@ -10,7 +10,7 @@
 int put_int(va_list ap)
 {
 	long num = (long)va_arg(ap, int);
-	int count = 0, rev_num = 0;
+	long count = 0, rev_num = 0;
 
 	if (num < 0)
 	{
@@ -82,4 +82,25 @@ int print_binary(va_list ap)
 	free(num_bits);
 
 	return (count);
+}
+
+/**
+ * string_rev - A function that reverses a string
+ * @str: string
+ *
+ * Return: number of characters printed
+ */
+
+int string_rev(va_list ap)
+{
+	char *str = va_arg(ap, char *);
+	int i, len = 0;
+
+	while (str[len] != '\0')
+		len++;
+
+	for (i = len - 1; i >= 0; i--)
+		_putchr(str[i]);
+
+	return (len);
 }
