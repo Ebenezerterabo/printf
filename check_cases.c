@@ -36,6 +36,8 @@ int check_cases(va_list ap, const char *format)
 		case 'r':
 			len += string_rev(ap);
 			break;
+		case 'R':
+			print_rot13(ap);
 		default:
 			break;
 
